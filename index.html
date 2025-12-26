@@ -3,524 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waggy Pet Shop</title>
+  <title>Baba Autopats</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- Navbar -->
   <header>
-    <div class="top-bar">
-      <div class="logo">
-        <img src="doghome.png" alt="Waggy Logo">
-        <span>WAGGY</span>
-        <small>Pet Shop.</small>
-      </div>
-
-      <div class="search-box">
-        <input type="text" placeholder="Search For More Than 10,000 Products">
-        <button>🔍</button>
-      </div>
-
-      <div class="contact">
-        <span>Phone <br><strong>+980-34984089</strong></span>
-        <span>Email <br><strong>Waggy@Gmail.Com</strong></span>
-      </div>
-
-      <div class="icons">
-        <span>👤</span>
-        <span>❤</span>
-        <span class="cart">🛒 <sup id="cart-count">03</sup></span>
-      </div>
+    <div class="nav-container">
+      <div class="logo">Baba Autopats</div>
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-
-    <!-- NAVIGATION -->
-    <nav>
-      <ul>
-        <li><a href="#">Shop by Category ⌄</a></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Pages ⌄</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Others</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-text">
-      <p class="offer">SAVE 10 - 20 % OFF</p>
-      <h1>
-        Best Destination <br>
-        For <span>Your Pets</span>
-      </h1>
-      <button class="shop-btn">SHOP NOW →</button>
-    </div>
+    <div class="hero-left">
+      <span class="pill">Trusted since 1990</span>
+      <h1>Premium auto parts — B2B & B2C distribution across India</h1>
+      <p class="subtitle">OEM-grade parts, fast logistics and enterprise-level support. Designed for workshops, dealerships and online retailers.</p>
 
-    <div class="hero-img">
-      <img src="doghome.png" alt="Dog with toy">
-    </div>
-  
-
-  </section>
-    <!-- PRODUCTS SECTION -->
-<section class="products">
-  <div class="section-header">
-    <h2>Pet Clothing</h2>
-    <button class="shop-now">SHOP NOW →</button>
-  </div>
-
-  <div class="product-grid">
-    <!-- Product 1 -->
-    <div class="product-card">
-      <div class="badge">New</div>
-      <img src="item1.jpg" alt="Grey Hoodie">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="fav-btn">❤</button>
+      <!-- KPIs -->
+      <div class="kpis">
+        <div class="kpi"><strong>50k+</strong><span>Orders fulfilled</span></div>
+        <div class="kpi"><strong>1,200+</strong><span>SKUs</span></div>
+        <div class="kpi"><strong>350+</strong><span>Dealers & partners</span></div>
       </div>
-    </div>
 
-    <!-- Product 2 -->
-    <div class="product-card">
-      <img src="item2.jpg" alt="Grey Hoodie">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="fav-btn">❤</button>
-      </div>
-    </div>
-
-    <!-- Product 3 -->
-    <div class="product-card">
-      <div class="badge sale">-10%</div>
-      <img src="item4.jpg" alt="Grey Hoodie">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="fav-btn">❤</button>
-      </div>
-    </div>
-
-    <!-- Product 4 -->
-    <div class="product-card">
-      <img src="item8.jpg" alt="Grey Hoodie">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="fav-btn">❤</button>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- PET FOODIES SECTION -->
-<section class="products">
-  <div class="section-header">
-    <h2>Pet Foodies</h2>
-
-    <div class="filters">
-      <button class="filter active" data-filter="all">ALL</button>
-      <button class="filter" data-filter="cat">CAT</button>
-      <button class="filter" data-filter="dog">DOG</button>
-      <button class="filter" data-filter="bird">BIRD</button>
-    </div>
-
-    <button class="shop-now">SHOP NOW →</button>
-  </div>
-
-  <div class="product-grid" id="foodies-grid">
-    <!-- Product 1 -->
-    <div class="product-card dog">
-      <img src="item9 (1).jpg" alt="Food">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="fav-btn">❤</button>
-      </div>
-    </div>
-
-    <!-- Product 2 -->
-    <div class="product-card cat">
-      <div class="badge">New</div>
-      <img src="item10 (1).jpg" alt="Food">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="fav-btn">❤</button>
-      </div>
-    </div>
-
-    <!-- Product 3 -->
-    <div class="product-card bird">
-      <img src="item11.jpg" alt="Food">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="fav-btn">❤</button>
-      </div>
-    </div>
-
-    <!-- Product 4 -->
-    <div class="product-card dog">
-      <div class="badge">Sold</div>
-      <img src="item12.jpg" alt="Food">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="fav-btn">❤</button>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- PET TREATS SECTION -->
-<section class="products">
-  <div class="section-header">
-    <h2>Pet Treats</h2>
-
-    <div class="filters">
-      <button class="filter active" data-filter="all">ALL</button>
-      <button class="filter" data-filter="cat">CAT</button>
-      <button class="filter" data-filter="dog">DOG</button>
-      <button class="filter" data-filter="bird">BIRD</button>
-    </div>
-
-    <button class="shop-now">SHOP NOW →</button>
-  </div>
-
-  <div class="product-grid" id="treats-grid">
-    <!-- Product 1 -->
-    <div class="product-card dog">
-      <img src="item13.jpg" alt="Treat">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="fav-btn">❤</button>
-      </div>
-    </div>
-
-    <!-- Product 2 -->
-    <div class="product-card cat">
-      <img src="item14.jpg" alt="Treat">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="fav-btn">❤</button>
-      </div>
-    </div>
-
-    <!-- Product 3 -->
-    <div class="product-card dog">
-      <div class="badge">Sale</div>
-      <img src="item15.jpg" alt="Treat">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="fav-btn">❤</button>
-      </div>
-    </div>
-
-    <!-- Product 4 -->
-    <div class="product-card bird">
-      <img src="item16.jpg" alt="Treat">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="fav-btn">❤</button>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- CLEARANCE SALE SECTION -->
-<section class="clearance-sale">
-  <div class="sale-content">
-    <p class="discount">UPTO 40% OFF</p>
-    <h2>Clearance <br> Sale !!!</h2>
-    <button class="shop-btn">SHOP NOW →</button>
-  </div>
-  <div class="sale-image">
-    <img src="banner-img2.png" alt="Clearance Sale Dog">
-  </div>
-</section>
-<!-- TESTIMONIALS / QUOTE CAROUSEL -->
-<section class="testimonial">
-  <div class="quote-icon">❝</div>
-  <div class="testimonial-slider">
-    <div class="slide active">
-      <p>At the core of our practice is the idea that cities are the incubators of our greatest achievements, and the best hope for a sustainable future.</p>
-      <span>- Joshima Lin</span>
-    </div>
-    <div class="slide">
-      <p>Pets bring joy to our homes and deserve the best products for their comfort and happiness.</p>
-      <span>- Sarah Johnson</span>
-    </div>
-    <div class="slide">
-      <p>Quality, care, and love for animals are at the heart of everything we do.</p>
-      <span>- Michael Brown</span>
-    </div>
-  </div>
-
-  <!-- Navigation dots -->
-  <div class="dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-</section>
-<!-- BEST SELLING PRODUCTS -->
-<section class="best-selling">
-  <div class="section-header">
-    <h2>Best Selling Products</h2>
-    <a href="#" class="shop-btn">SHOP NOW →</a>
-  </div>
-
-  <div class="product-grid">
-    <!-- Product 1 -->
-    <div class="product-card">
-      <img src="item5.jpg" alt="Pet House">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">★★★★★ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="product-actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="wishlist-btn">♡</button>
-      </div>
-    </div>
-
-    <!-- Product 2 -->
-    <div class="product-card">
-      <img src="item6.jpg" alt="Dog Food">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">★★★★★ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="product-actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="wishlist-btn">♡</button>
-      </div>
-    </div>
-
-    <!-- Product 3 (with Sale) -->
-    <div class="product-card">
-      <span class="sale-badge">Sale</span>
-      <img src="item8 (1).jpg" alt="Dog Hoodie">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">★★★★★ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="product-actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="wishlist-btn">♡</button>
-      </div>
-    </div>
-
-    <!-- Product 4 -->
-    <div class="product-card">
-      <img src="item3.jpg" alt="Dog Pajamas">
-      <h3>Grey Hoodie</h3>
-      <div class="rating">★★★★★ <span>5.0</span></div>
-      <p class="price">$18.00</p>
-      <div class="product-actions">
-        <button class="cart-btn">ADD TO CART</button>
-        <button class="wishlist-btn">♡</button>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- DISCOUNT REGISTRATION SECTION -->
-<section class="discount-register">
-  <h2>
-    Get <span class="highlight">20% Off</span> On <br>
-    <span class="highlight2">First Purchase</span>
-  </h2>
-
-  <form class="register-form">
-    <input type="email" placeholder="Enter Your Email Address" required>
-    <input type="password" placeholder="Create Password" required>
-    <input type="password" placeholder="Repeat Password" required>
-    <button type="submit">REGISTER IT NOW</button>
-  </form>
-</section>
-<!-- ===== Latest Blog Post Section ===== -->
-<section class="blog">
-  <div class="blog-header">
-    <h2>Latest Blog Post</h2>
-    <a href="#" class="read-all-btn">READ ALL →</a>
-  </div>
-
-  <div class="blog-container">
-    <!-- Blog 1 -->
-    <div class="blog-card">
-      <div class="blog-img">
-        <img src="blog1.jpg" alt="Dog in a box">
-        <div class="blog-date">
-          <span>20</span>
-          <small>Feb</small>
+      <!-- Feature Cards -->
+      <div class="features">
+        <div class="card">
+          <h3>Wide Inventory</h3>
+          <p>Suspension, engine, electrical, body parts — in-stock & ready to ship.</p>
+        </div>
+        <div class="card">
+          <h3>Quality Assured</h3>
+          <p>Grade-tested products with warranty & returns process for businesses.</p>
+        </div>
+        <div class="card">
+          <h3>Enterprise Support</h3>
+          <p>Dedicated account managers, API access and priority shipping.</p>
         </div>
       </div>
-      <h3>10 Reasons To Be Helpful Towards Any Animals</h3>
-      <p>
-        At the core of our practice is the idea that cities are the incubators of our greatest achievements, and the best hope for a sustainable future.
-      </p>
-      <a href="#" class="read-more">READ MORE</a>
     </div>
 
-    <!-- Blog 2 -->
-    <div class="blog-card">
-      <div class="blog-img">
-        <img src="blog2.jpg" alt="Dog waiting for food">
-        <div class="blog-date">
-          <span>21</span>
-          <small>Feb</small>
+    <!-- Quote Form -->
+    <aside class="quote-form">
+      <h2>Get a quick quote</h2>
+      <p class="form-subtitle">Tell us your vehicle make & part and we'll reply within one business day.</p>
+      <form 
+>
+        <label>Company / Name
+          <input type="text" name="text"  placeholder="Company or your name" required>
+        </label>
+        <label>Email
+          <input type="email" name="email"    placeholder="you@company.com" required>
+        </label>
+        <label>Part / SKU
+          <input type="text" name="text"  placeholder="e.g. Alternator, SKU-1234" required>
+        </label>
+        <div class="form-buttons">
+          <button type="submit" class="btn-primary">Request Quote</button>
+          <button type="submit" class="btn-secondary">Contact Sales</button>
         </div>
-      </div>
-      <h3>How To Know Your Pet Is Hungry</h3>
-      <p>
-        At the core of our practice is the idea that cities are the incubators of our greatest achievements, and the best hope for a sustainable future.
-      </p>
-      <a href="#" class="read-more">READ MORE</a>
-    </div>
-
-    <!-- Blog 3 -->
-    <div class="blog-card">
-      <div class="blog-img">
-        <img src="blog3.jpg" alt="Dog house">
-        <div class="blog-date">
-          <span>22</span>
-          <small>Feb</small>
-        </div>
-      </div>
-      <h3>Best Home For Your Pets</h3>
-      <p>
-        At the core of our practice is the idea that cities are the incubators of our greatest achievements, and the best hope for a sustainable future.
-      </p>
-      <a href="#" class="read-more">READ MORE</a>
-    </div>
-  </div>
-</section>
-<!-- ===== Features Section ===== -->
-<section class="features">
-  <div class="feature-box">
-    <div class="feature-icon">
-      <i class="fas fa-shopping-cart"></i>
-    </div>
-    <h3>Free Delivery</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
-  </div>
-
-  <div class="feature-box">
-    <div class="feature-icon">
-      <i class="fas fa-lock"></i>
-    </div>
-    <h3>100% Secure Payment</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
-  </div>
-
-  <div class="feature-box">
-    <div class="feature-icon">
-      <i class="fas fa-tags"></i>
-    </div>
-    <h3>Daily Offer</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
-  </div>
-
-  <div class="feature-box">
-    <div class="feature-icon">
-      <i class="fas fa-award"></i>
-    </div>
-    <h3>Quality Guarantee</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
-  </div>
-</section>
-<!-- ===== Footer Section ===== -->
-<footer class="footer">
-  <div class="footer-container">
-    
-    <!-- Logo & About -->
-    <div class="footer-col">
-      <h2 class="logo"><i class="fas fa-dog"></i> WAGGY</h2>
-      <p>Subscribe to our newsletter to get updates about our grand offers.</p>
-      <div class="social-links">
-         <a href="#"><i class="fab fa-facebook-f"></i></a>
-         <a href="#"><i class="fab fa-twitter"></i></a>
-         <a href="#"><i class="fab fa-pinterest"></i></a>
-         <a href="#"><i class="fab fa-instagram"></i></a>
-         <a href="#"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-
-    <!-- Quick Links -->
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Offer</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-    </div>
-
-    <!-- Help Center -->
-    <div class="footer-col">
-      <h4>Help Center</h4>
-      <ul>
-        <li><a href="#">FAQs</a></li>
-        <li><a href="#">Payment</a></li>
-        <li><a href="#">Returns & Refunds</a></li>
-        <li><a href="#">Checkout</a></li>
-        <li><a href="#">Delivery Information</a></li>
-      </ul>
-    </div>
-
-    <!-- Newsletter -->
-    <div class="footer-col">
-      <h4>Our Newsletter</h4>
-      <p>Subscribe to our newsletter to get updates about our grand offers.</p>
-      <form class="newsletter">
-        <input type="email" placeholder="Enter Your Email Here" required>
-        <!-- <button type="submit"><i class="fas fa-paper-plane"></i></button> -->
       </form>
+    </aside>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <h2 class="section-title">Our Services</h2>
+    <div class="cards-grid">
+      <div class="service-card">
+        <h3>Fast Delivery</h3>
+        <p>Nationwide logistics and quick order fulfillment for workshops and dealers.</p>
+      </div>
+      <div class="service-card">
+        <h3>Custom Sourcing</h3>
+        <p>We help you source rare and high-demand automobile parts on request.</p>
+      </div>
+      <div class="service-card">
+        <h3>Technical Support</h3>
+        <p>Expert advice and after-sales service to ensure your business runs smoothly.</p>
+      </div>
     </div>
+  </section>
 
-  </div>
-  <hr>
-  <p class="footer-bottom">© 2024 Waggy Pet Shop | All Rights Reserved.</p>
-</footer>
+  <!-- Products Section -->
+  <section id="products" class="section">
+    <h2 class="section-title">Our Products</h2>
+    <div class="cards-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Engine Parts">
+        <h3>Engine Parts</h3>
+        <p>OEM-grade pistons, crankshafts, alternators and more.</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Suspension">
+        <h3>Suspension</h3>
+        <p>Shocks, struts, and suspension kits for all major vehicles.</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Electrical">
+        <h3>Electrical</h3>
+        <p>Alternators, batteries, and wiring harnesses.</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Body Parts">
+        <h3>Body Parts</h3>
+        <p>Bumpers, lights, mirrors, and OEM body components.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <h2 class="section-title">Get in Touch</h2>
+    <form class="contact-form"   action="https://formspree.io/f/myzngdeo"
+  method="POST">
+      <input type="text" name="text" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" name="Message" required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+  </section>
 
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Baba Autopats. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </nav>
+    </div>
+  </footer>
 
-
-
-
-
+  <script>
+    function toggleMenu(){
+      document.getElementById('nav-links').classList.toggle('show');
+    }
+  </script>
 </body>
 </html>

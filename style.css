@@ -1,0 +1,792 @@
+/* RESET */
+
+.h1-desktop{
+  font-weight: bold;
+  font-size: 64px;
+  color:black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Neue", sans-serif;
+}
+body {
+  background: #fff;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  border-bottom: 1px solid #eee;
+}
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+.logo img {
+  width: 40px;
+  margin-right: 8px;
+}
+.logo small {
+  font-size: 12px;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+/* SEARCH */
+.search-box {
+  flex: 1;
+  display: flex;
+  margin: 0 30px;
+}
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px;
+}
+.search-box button {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* CONTACT */
+.contact {
+  display: flex;
+  gap: 25px;
+  font-size: 14px;
+}
+.contact strong {
+  font-size: 15px;
+}
+
+/* ICONS */
+.icons {
+  font-size: 20px;
+}
+.icons span {
+  margin-left: 12px;
+  cursor: pointer;
+  position: relative;
+}
+#cart-count {
+  background: #f4b860;
+  color: #000;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-size: 12px;
+  position: absolute;
+  top: -8px;
+  right: -12px;
+}
+
+/* NAVBAR */
+nav {
+  background: #fff;
+  padding: 12px 50px;
+  border-top: 1px solid #eee;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+nav a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #333;
+}
+nav a:hover {
+  color: #c08a2f;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 50px;
+  background: #fcf9f5;
+}
+.hero-text {
+  max-width: 50%;
+}
+.hero-text .offer {
+  color: #c08a2f;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.hero-text h1 {
+  font-size: 50px;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+.hero-text span {
+  color: #c08a2f;
+}
+.shop-btn {
+  padding: 12px 25px;
+  border: 1px solid #333;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+.shop-btn:hover {
+  background: #333;
+  color: #fff;
+}
+.hero-img img {
+  max-width: 400px;
+}
+/* PRODUCTS SECTION */
+.products {
+  padding: 60px 50px;
+  background: #fff;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.section-header h2 {
+  font-size: 36px;
+  font-weight: normal;
+}
+.shop-now {
+  padding: 10px 20px;
+  border: 1px solid #333;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.shop-now:hover {
+  background: #333;
+  color: #fff;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.product-card {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+}
+.product-card img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.product-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.rating {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #f4b860;
+}
+.rating span {
+  color: #333;
+  margin-left: 5px;
+}
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #c08a2f;
+  margin-bottom: 15px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.cart-btn {
+  padding: 10px 15px;
+  border: 1px solid #333;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.cart-btn:hover {
+  background: #333;
+  color: #fff;
+}
+.fav-btn {
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.fav-btn:hover {
+  background: #f4b860;
+  color: #fff;
+}
+
+/* Product badge */
+.badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #eee;
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+.badge.sale {
+  background: #c08a2f;
+  color: #fff;
+}
+/* FILTER BUTTONS */
+.filters {
+  display: flex;
+  gap: 25px;
+  margin: 0 20px;
+}
+.filters .filter {
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  cursor: pointer;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+.filters .filter.active {
+  border-color: #c08a2f;
+  color: #c08a2f;
+}
+.filters .filter:hover {
+  color: #c08a2f;
+}
+/* Clearance Sale Section */
+.clearance-sale {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  background: #fdf7f2;
+}
+
+.sale-content {
+  flex: 1;
+}
+
+.sale-content .discount {
+  font-size: 18px;
+  color: #d4a373;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.sale-content h2 {
+  font-size: 48px;
+  font-family: 'Comic Neue', cursive;
+  margin-bottom: 20px;
+}
+
+.shop-btn {
+  background: #fff;
+  border: 2px solid #333;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.shop-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+.sale-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.sale-image img {
+  max-width: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f6f1eb 50%, transparent 100%);
+}
+/* Testimonial Section */
+.testimonial {
+  text-align: center;
+  padding: 80px 10%;
+  background: #fff;
+  position: relative;
+}
+
+.quote-icon {
+  font-size: 100px;
+  color: #d4a373;
+  margin-bottom: 20px;
+}
+
+.testimonial-slider {
+  max-width: 800px;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+  font-size: 22px;
+  font-family: 'Comic Neue', cursive;
+  color: #777;
+}
+
+.slide.active {
+  display: block;
+  animation: fade 1s ease-in-out;
+}
+
+.slide span {
+  display: block;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #000;
+  font-weight: 500;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.dots {
+  margin-top: 20px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background: transparent;
+  border: 2px solid #333;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #333;
+}
+/* Best Selling Section */
+.best-selling {
+  padding: 80px 10%;
+  background: #fff;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  font-family: 'Comic Neue', cursive;
+}
+
+.shop-btn {
+  border: 1px solid #333;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.shop-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* Products Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background: #f8f8f8;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.rating {
+  color: #f5a623;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.price {
+  font-size: 20px;
+  color: #d4a373;
+  margin-bottom: 15px;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cart-btn, .wishlist-btn {
+  border: 1px solid #333;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #fff;
+}
+
+.cart-btn:hover, .wishlist-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+.sale-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #e0e0e0;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+/* Discount Registration */
+.discount-register {
+  background: #faf3eb;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.discount-register h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-family: 'Comic Neue', cursive;
+}
+
+.discount-register .highlight {
+  color: #000;
+  font-weight: bold;
+}
+
+.discount-register .highlight2 {
+  color: #d4a373;
+  font-weight: bold;
+}
+
+.register-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-form input {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: 'Comic Neue', cursive;
+}
+
+.register-form button {
+  background: #333;
+  color: #fff;
+  padding: 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.register-form button:hover {
+  background: #000;
+}
+/* Blog Section */
+.blog {
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.blog-header h2 {
+  font-size: 42px;
+  font-family: 'Comic Neue', cursive;
+}
+
+.read-all-btn {
+  padding: 12px 24px;
+  border: 1px solid #333;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.read-all-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-img {
+  position: relative;
+}
+
+.blog-img img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+}
+
+.blog-date {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  font-family: 'Comic Neue', cursive;
+  color: #d4a373;
+}
+
+.blog-date span {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  color: #d4a373;
+}
+
+.blog-card h3 {
+  font-size: 20px;
+  margin: 15px;
+  font-family: 'Comic Neue', cursive;
+}
+
+.blog-card p {
+  font-size: 15px;
+  margin: 0 15px 15px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.read-more {
+  display: inline-block;
+  margin: 0 15px 20px;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2px;
+}
+
+.read-more:hover {
+  color: #d4a373;
+  border-color: #d4a373;
+}
+/* Features Section */
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 80px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.feature-box {
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #eee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 26px;
+  color: #d4a373;
+}
+
+.feature-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: 'Comic Neue', cursive;
+}
+
+.feature-box p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+/* Footer Section */
+.footer {
+  background: #fff;
+  padding: 60px 20px;
+  margin-top: 50px;
+  font-family: 'Comic Neue', cursive;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #d4a373;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #d4a373;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 5px;
+  color: #333;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #d4a373;
+}
+
+.newsletter {
+  display: flex;
+  margin-top: 10px;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 30px 0 0 30px;
+  outline: none;
+}
+
+.newsletter button {
+  background: #d4a373;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0 30px 30px 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #666;
+}

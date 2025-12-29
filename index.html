@@ -1,155 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baba Autopats</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Route Planner (₹)</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <header>
-    <div class="nav-container">
-      <div class="logo">Baba Autopats</div>
-      <button class="menu-btn" onclick="toggleMenu()">☰</button>
-      <nav>
-        <ul id="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-left">
-      <span class="pill">Trusted since 1990</span>
-      <h1>Premium auto parts — B2B & B2C distribution across India</h1>
-      <p class="subtitle">OEM-grade parts, fast logistics and enterprise-level support. Designed for workshops, dealerships and online retailers.</p>
+    <div class="app-container">
+        <aside class="sidebar">
+            <h2>🌍 Trip Planner</h2>
+            
+            <div class="input-group">
+                <input type="text" id="destination" placeholder="Enter Destination (e.g. Mumbai)">
+                <input type="date" id="travel-date">
+                <input type="number" id="travel-cost" placeholder="Estimated Cost (₹)" min="0">
+                <button id="add-stop">Add to Itinerary</button>
+            </div>
 
-      <!-- KPIs -->
-      <div class="kpis">
-        <div class="kpi"><strong>50k+</strong><span>Orders fulfilled</span></div>
-        <div class="kpi"><strong>1,200+</strong><span>SKUs</span></div>
-        <div class="kpi"><strong>350+</strong><span>Dealers & partners</span></div>
-      </div>
+            <hr>
 
-      <!-- Feature Cards -->
-      <div class="features">
-        <div class="card">
-          <h3>Wide Inventory</h3>
-          <p>Suspension, engine, electrical, body parts — in-stock & ready to ship.</p>
-        </div>
-        <div class="card">
-          <h3>Quality Assured</h3>
-          <p>Grade-tested products with warranty & returns process for businesses.</p>
-        </div>
-        <div class="card">
-          <h3>Enterprise Support</h3>
-          <p>Dedicated account managers, API access and priority shipping.</p>
-        </div>
-      </div>
+            <div id="pdf-content">
+                <div class="budget-summary">
+                    Total Budget: <span id="total-budget">₹0</span>
+                </div>
+
+                <div class="itinerary-header">
+                    <h3>Your Route</h3>
+                    <button id="clear-all" class="text-btn">Clear All</button>
+                </div>
+                
+                <ul id="stops"></ul>
+            </div>
+            
+            <button id="export-pdf" class="export-btn">📥 Download Itinerary (PDF)</button>
+        </aside>
+
+        <main id="map"></main>
     </div>
 
-    <!-- Quote Form -->
-    <aside class="quote-form">
-      <h2>Get a quick quote</h2>
-      <p class="form-subtitle">Tell us your vehicle make & part and we'll reply within one business day.</p>
-      <form 
->
-        <label>Company / Name
-          <input type="text" name="text"  placeholder="Company or your name" required>
-        </label>
-        <label>Email
-          <input type="email" name="email"    placeholder="you@company.com" required>
-        </label>
-        <label>Part / SKU
-          <input type="text" name="text"  placeholder="e.g. Alternator, SKU-1234" required>
-        </label>
-        <div class="form-buttons">
-          <button type="submit" class="btn-primary">Request Quote</button>
-          <button type="submit" class="btn-secondary">Contact Sales</button>
-        </div>
-      </form>
-    </aside>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="section">
-    <h2 class="section-title">Our Services</h2>
-    <div class="cards-grid">
-      <div class="service-card">
-        <h3>Fast Delivery</h3>
-        <p>Nationwide logistics and quick order fulfillment for workshops and dealers.</p>
-      </div>
-      <div class="service-card">
-        <h3>Custom Sourcing</h3>
-        <p>We help you source rare and high-demand automobile parts on request.</p>
-      </div>
-      <div class="service-card">
-        <h3>Technical Support</h3>
-        <p>Expert advice and after-sales service to ensure your business runs smoothly.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Products Section -->
-  <section id="products" class="section">
-    <h2 class="section-title">Our Products</h2>
-    <div class="cards-grid">
-      <div class="product-card">
-        <img src="https://via.placeholder.com/150" alt="Engine Parts">
-        <h3>Engine Parts</h3>
-        <p>OEM-grade pistons, crankshafts, alternators and more.</p>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/150" alt="Suspension">
-        <h3>Suspension</h3>
-        <p>Shocks, struts, and suspension kits for all major vehicles.</p>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/150" alt="Electrical">
-        <h3>Electrical</h3>
-        <p>Alternators, batteries, and wiring harnesses.</p>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/150" alt="Body Parts">
-        <h3>Body Parts</h3>
-        <p>Bumpers, lights, mirrors, and OEM body components.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section contact">
-    <h2 class="section-title">Get in Touch</h2>
-    <form class="contact-form"   action="https://formspree.io/f/myzngdeo"
-  method="POST">
-      <input type="text" name="text" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" name="Message" required></textarea>
-      <button type="submit" class="btn-primary">Send Message</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <p>&copy; 2025 Baba Autopats. All rights reserved.</p>
-      <nav class="footer-nav">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-      </nav>
-    </div>
-  </footer>
-
-  <script>
-    function toggleMenu(){
-      document.getElementById('nav-links').classList.toggle('show');
-    }
-  </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
